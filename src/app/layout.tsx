@@ -7,7 +7,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'InstaEngage - Boost Your Instagram Engagement',
+  title: 'Engage - Boost Your Instagram Engagement',
   description: 'Automate replies, engage customers, and grow your business effortlessly with AI-powered chats.',
 }
 
