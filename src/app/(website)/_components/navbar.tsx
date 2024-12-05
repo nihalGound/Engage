@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from './dark-mode-toggle'
+import { LogoSmall } from '@/svgs/logo-small'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -20,11 +21,9 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold">
-              <span className="text-gradient">InstaEngage</span>
+            <Link href="/" className='mt-7'>
+              <LogoSmall />
             </Link>
-          </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link href="#" className="text-sm font-medium text-foreground/60 hover:text-foreground">Home</Link>

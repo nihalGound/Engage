@@ -1,3 +1,4 @@
+import InfoBar from '@/components/global/infobar'
 import Sidebar from '@/components/global/sidebar'
 import React from 'react'
 
@@ -19,7 +20,7 @@ const Layout = ({children,params}: Props) => {
         flex-col 
         overflow-auto
         ">
-            {/* infobar */}
+            <InfoBar slug={params.slug} />
             {children}
         </div>
     </div>
