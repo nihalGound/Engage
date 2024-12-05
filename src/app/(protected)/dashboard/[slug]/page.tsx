@@ -4,7 +4,7 @@ type Props = {}
 
 const Page = (props: Props) => {
   return (
-    <div>Slug page</div>
+    <div></div>
   )
 }
 

@@ -1,3 +1,4 @@
+import Sidebar from '@/components/global/sidebar'
 import React from 'react'
 
 type Props = {
@@ -7,9 +8,17 @@ type Props = {
 
 const Layout = ({children,params}: Props) => {
   return (
-    <div>
-        {/* sidebar */}
-        <div>
+    <div className="p-3">
+        <Sidebar slug={params.slug} />
+        <div
+        className="
+        lg:ml-[250px] 
+        lg:pl-10 
+        lg:py-5 
+        flex 
+        flex-col 
+        overflow-auto
+        ">
             {/* infobar */}
             {children}
         </div>
