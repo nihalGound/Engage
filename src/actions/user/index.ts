@@ -1,4 +1,5 @@
 "use server"
+
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import { createUser, findUser } from "./queries"
@@ -78,4 +79,19 @@ export const getSubscriptionInfo = async () => {
         return null
     }
 }
+
+export const onUserInfo = async () => {
+    try {
+        const user = await onCurrentUser()
+        const profile = await findUser(user?.id!)
+        if(profile) return { status: 200, data: profile}
+        return {status: 404}
+    } catch (error) {
+        console.log(error)
+        return {
+            status: 500
+        }
+    }
+}
+
 

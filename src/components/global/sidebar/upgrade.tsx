@@ -6,7 +6,7 @@ type Props = {}
 const UpgradeCard = (props: Props) => {
   return (
     <div className="bg-[#252525] p-3 rounded-2xl flex flex-col gap-y-3">
-      <span className="text-sm">
+      <span className="text-sm text-muted-foreground">
         Upgrade to {''}
         <span
           className="bg-gradient-to-r 

@@ -199,3 +199,7 @@
     transform: scale(1);
   }
 }
+
+.backdrop--blur__safari {
+  -webkit-backdrop-filter: blur(5px);
+}

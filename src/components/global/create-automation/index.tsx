@@ -5,18 +5,16 @@ import React from 'react'
 import Loader from '../loader'
 import { AutomationDuoToneWhite } from '@/icons'
 
-type Props = {}
-
-const CreateAutomation = (props: Props) => {
-
-  // WIP : wireup create automation function
+const CreateAutomation = () => {
+  const handleCreateAutomation = () => {
+    // WIP: Implement create automation function
+    console.log('Create automation clicked');
+  };
 
   return (
     <Button
-      className="lg:px-10 py-6 bg-gradient-to-br hover:opacity-80 text-white rounded-full from-[#3352CC] font-medium to-[#1C2D70]"
-      onClick={() =>{
-        
-      }}
+      className="lg:px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-full font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
+      onClick={handleCreateAutomation}
     >
       <Loader state={false}>
         <AutomationDuoToneWhite />
@@ -27,3 +25,4 @@ const CreateAutomation = (props: Props) => {
 }
 
 export default CreateAutomation
+
