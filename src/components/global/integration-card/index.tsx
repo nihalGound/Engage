@@ -1,7 +1,9 @@
 "use client"
 
+import { onOAuthInstagram } from '@/actions/integrations'
 import { onUserInfo } from '@/actions/user'
 import { Button } from '@/components/ui/button'
+import { queryUserProfileKey } from '@/constants/react-query-variables'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 
@@ -13,12 +15,10 @@ type Props = {
 }
 
 const IntegrationCard = ({title, description, icon, strategy}: Props) => {
-    const onInstaOAuth = () => {
-        console.log('Implement Instagram OAuth')
-    };
+    const onInstaOAuth = () => onOAuthInstagram(strategy)
 
     const {data} = useQuery({
-        queryKey: ["user-profile"],
+        queryKey: [queryUserProfileKey],
         queryFn: onUserInfo,
     })
 

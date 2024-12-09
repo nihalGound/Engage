@@ -12,7 +12,7 @@ type Props = {
 const Layout = async ({children,params}: Props) => {
   const query = new QueryClient()
   await PrefetchUserProfile(query)
-  await PrefetchUserAutomations(query)
+  
   return (
     <HydrationBoundary state={dehydrate(query)}>
       <div className="p-3">

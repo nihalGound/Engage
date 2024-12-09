@@ -5,6 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
 import ReactQueryProvider from "@/providers/react-query-provider";
+import ReduxProvider from "@/providers/redux-provider";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -24,7 +25,9 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body className={`${jakarta.className} bg-[#f6f6f6] dark:bg-black`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <ReactQueryProvider>{children}</ReactQueryProvider>
+            <ReduxProvider>
+              <ReactQueryProvider>{children}</ReactQueryProvider>
+            </ReduxProvider>
             <Toaster />
           </ThemeProvider>
         </body>

@@ -43,7 +43,7 @@ const InfoBar = ({ slug }: Props) => {
   );
 };
 
-const MobileSidebar = ({ page, slug }: { page: string; slug: string }) => (
+export const MobileSidebar = ({ page, slug }: { page: string; slug: string }) => (
   <span className="lg:hidden flex items-center flex-1 gap-x-2">
     <Sheet trigger={<Menu className="text-black dark:text-white hover:text-indigo-300 transition-colors duration-200" />} className="lg:hidden" side="left">
       <div className="flex flex-col gap-y-5 w-full h-full p-3 border-gray-700 bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 bg-clip-padding backdrop-filter backdrop-blur-3xl">

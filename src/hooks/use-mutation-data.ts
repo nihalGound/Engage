@@ -14,21 +14,27 @@ export const useMutationData = (
   onSuccess?: () => void
 ) => {
   const client = useQueryClient();
+  
   const {mutate,isPending} = useMutation({
     mutationKey,
     mutationFn,
     onSuccess: (data) => {
       if (onSuccess) onSuccess();
-      return toast(data?.status === 200 ? "Success" : "Error", {
+      toast(data?.status === 200 ? "Success" : "Error", {
         description: data.data,
       });
     },
     onSettled: async () => {
-      await client.invalidateQueries({ queryKey: [queryKey] });
+      // Use exact query key and include options for more precise invalidation
+      console.log("invalidating queryies stared for : ",queryKey)
+      await client.invalidateQueries({ 
+        queryKey: [queryKey],
+        
+      })
     },
   });
 
-  return {mutate,isPending}
+  return {mutate,isPending};
 };
 
 export const useMutationDataState = (mutationKey: MutationKey) => {
@@ -39,8 +45,8 @@ export const useMutationDataState = (mutationKey: MutationKey) => {
                 variables: mutation.state.variables as any,
                 status:mutation.state.status
             }
-        }
+        },
     })
-    const latestVariable = data[data.length -1]
+    const latestVariable = data[data.length-1]
     return {latestVariable};
 }

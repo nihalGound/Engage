@@ -39,7 +39,7 @@ export default function PricingSection() {
     },
     {
       name: 'Pro',
-      price: '$29',
+      price: '$9.99',
       description: 'Best for growing businesses',
       features: [
         'All features from Free Plan',

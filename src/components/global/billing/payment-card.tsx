@@ -50,7 +50,7 @@ const PaymentCard = ({ current, label, landing }: Props) => {
           <p className="font-bold text-2xl text-indigo-300 mb-2">Standard</p>
         )}
         <p className="text-xl font-bold text-white mb-4">
-          {isPro ? '$99/month' : 'Free'}
+          {isPro ? '$9.99/month' : 'Free'}
         </p>
 
         {PLANS[isPro ? 1 : 0].features.map((feature) => (
